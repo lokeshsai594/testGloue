@@ -1,0 +1,8 @@
+{
+    "mongoUrl": "mongodb://localhost:27017/iotgluedb",
+    "mongoDBname": "iotgluedb",
+    "schemaGeneratorUrl" : "https://172.30.66.175:8089/action-application/rest/generate",
+    "approveURL" : "https://127.0.0.1:8089/connector-application/rest/approve",
+    "disapproveURL": "https://127.0.0.1:8089/connector-application/rest/disapprove",
+	"addSourceMappingURL": "https://127.0.0.1:8089/connector-application/rest/addsourcemapping"
+}

@@ -1,0 +1,5292 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "IOTGlue NodeAPI's",
+    "description": "",
+    "contact": {}
+  },
+  "host": "localhost:3000",
+  "basePath": "/iotglueapi/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/commune/templates": {
+      "get": {
+        "description": "",
+        "summary": "getAllTemplatesWithPagination",
+        "tags": [
+          "Template"
+        ],
+        "operationId": "getAllTemplatesWithPagination",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "page_no",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "post": {
+        "summary": "createTemplate",
+        "tags": [
+          "Template"
+        ],
+        "operationId": "createTemplate",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/createTemplateRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/commune/templates/{templateId}": {
+      "delete": {
+        "description": "",
+        "summary": "deleteTemplateById",
+        "tags": [
+          "Template"
+        ],
+        "operationId": "deleteTemplateById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+          "name": "templateId",
+          "in": "path",
+          "description": "ID of template to delete",
+          "required": true,
+          "type": "string"
+          }],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "summary": "getTemplateById",
+        "tags": [
+          "Template"
+        ],
+        "operationId": "getTemplateById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+          "name": "templateId",
+          "in": "path",
+          "description": "ID of template to return",
+          "required": true,
+          "type": "string"
+          }],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "summary": "updateTemplateById",
+        "tags": [
+          "Template"
+        ],
+        "operationId": "updateTemplateById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "templateId",
+            "in": "path",
+            "description": "ID of template to update",
+            "required": true,
+            "type": "string"
+            },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/updateTemplateByIdRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+  "/commune/sources": {
+      "post": {
+        "description": "",
+        "summary": "createSource",
+        "tags": [
+          "Source"
+        ],
+        "operationId": "createSource",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/createSourceRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "summary": "getAllSourcesWithPagination",
+        "tags": [
+          "Source"
+        ],
+        "operationId": "getAllSourcesWithPagination",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "page_no",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+   "/commune/sources/{sourceId}": {
+      "get": {
+        "description": "",
+        "summary": "getSourceById",
+        "tags": [
+          "Source"
+        ],
+        "operationId": "getSourceById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "sourceId",
+            "in": "path",
+            "description": "ID of source to return",
+            "required": true,
+            "type": "string"
+            }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "summary": "updateSourceById",
+        "tags": [
+          "Source"
+        ],
+        "operationId": "updateSourceById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "sourceId",
+            "in": "path",
+            "description": "ID of source to update",
+            "required": true,
+            "type": "string"
+            },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/updateSourceByIdRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "summary": "deleteSourceById",
+        "tags": [
+          "Source"
+        ],
+        "operationId": "deleteSourceById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+          "name": "sourceId",
+          "in": "path",
+          "description": "ID of source to delete",
+          "required": true,
+          "type": "string"
+          }],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+   "/commune/sourcemappings": {
+      "post": {
+        "description": "",
+        "summary": "createSourceMapping",
+        "tags": [
+          "Source Mapping"
+        ],
+        "operationId": "createSourceMapping",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/createSourceMappingRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "summary": "getAllSourceMapWithPagination",
+        "tags": [
+          "Source Mapping"
+        ],
+        "operationId": "getAllSourceMapWithPagination",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "page_no",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+          
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/commune/sourcemappings/{sourcemappingId}": {
+      "get": {
+        "description": "",
+        "summary": "getSourceMappingById",
+        "tags": [
+          "Source Mapping"
+        ],
+        "operationId": "getSourceMappingById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "sourcemappingId",
+            "in": "path",
+            "description": "ID of source mapping to return",
+            "required": true,
+            "type": "string"
+            }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "summary": "updateSourceMappingById",
+        "tags": [
+          "Source Mapping"
+        ],
+        "operationId": "updateSourceMappingById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+            {
+            "name": "sourcemappingId",
+            "in": "path",
+            "description": "ID of source mapping to update",
+            "required": true,
+            "type": "string"
+            },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/updateSourceMappingByIdRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "summary": "deleteSourceMappingById",
+        "tags": [
+          "Source Mapping"
+        ],
+        "operationId": "deleteSourceMappingById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+          "name": "sourcemappingId",
+          "in": "path",
+          "description": "ID of source mapping to delete",
+          "required": true,
+          "type": "string"
+          }],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+
+    "/rtbuilder/rules": {
+      "post": {
+        "description": "",
+        "summary": "createRule",
+        "tags": [
+          "Rule"
+        ],
+        "operationId": "createRule",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/createRuleRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "summary": "getAllRulesWithPagination",
+        "tags": [
+          "Rule"
+        ],
+        "operationId": "getAllRulesWithPagination",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "page_no",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }},
+    "/rtbuilder/rules/{ruleId}": {
+      "get": {
+        "description": "",
+        "summary": "getRuleById",
+        "tags": [
+          "Rule"
+        ],
+        "operationId": "getRuleById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "ruleId",
+            "in": "path",
+            "description": "ID of rule to return",
+            "required": true,
+            "type": "string"
+            }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "summary": "updateRuleById",
+        "tags": [
+          "Rule"
+        ],
+        "operationId": "updateRuleById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "ruleId",
+            "in": "path",
+            "description": "ID of rule to update",
+            "required": true,
+            "type": "string"
+            },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/updateRuleByIdRequest"
+            }
+          }
+          
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "summary": "deleteRuleById",
+        "tags": [
+          "Rule"
+        ],
+        "operationId": "deleteRuleById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+          "name": "ruleId",
+          "in": "path",
+          "description": "ID of rule to delete",
+          "required": true,
+          "type": "string"
+          }],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/common/uniquecheck": {
+      "post": {
+        "description": "Checks uniqueness of values",
+        "summary": "uniqueCheck",
+        "tags": [
+          "Common"
+        ],
+        "operationId": "uniqueCheck",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/uniqueCheckRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/common/uniqueValuesCheck": {
+      "post": {
+        "description": "Checks for unique combination of inputs",
+        "summary": "uniqueValuesCheck",
+        "tags": [
+          "Common"
+        ],
+        "operationId": "uniqueValuesCheck",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/uniqueValuesCheckRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+
+    "/common/sources/{sourceId}/templates": {
+      "get": {
+        "description": "getSource along with template attach to it",
+        "summary": "getSourceWithTemplate",
+        "tags": [
+          "Common"
+        ],
+        "operationId": "getSourceWithTemplate",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "sourceId",
+            "in": "path",
+            "description": "ID of source to return",
+            "required": true,
+            "type": "string"
+            }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    
+    "/common/sources/{sourceId}/sourcemappings/{sourcemappingId}": {
+      "get": {
+        "description": "getSourceMappingWithSource",
+        "summary": "getSourceMappingWithSource",
+        "tags": [
+          "Common"
+        ],
+        "operationId": "getSourceMappingWithSource",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "sourceId",
+            "in": "path",
+            "description": "ID of source",
+            "required": true,
+            "type": "string"
+            },
+            {
+              "name": "sourcemappingId",
+              "in": "path",
+              "description": "ID of source mapping for selected source",
+              "required": true,
+              "type": "string"
+              }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/common/rightpanel/templates/{templateId}": {
+      "get": {
+        "description": "getTemplateForRightPanelById",
+        "summary": "getTemplateForRightPanelById",
+        "tags": [
+          "Common - Right Panel"
+        ],
+        "operationId": "getTemplateForRightPanelById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+       "parameters": [
+          {
+            "name": "templateId",
+            "in": "path",
+            "description": "ID of template",
+            "required": true,
+            "type": "string"
+            }
+            
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/common/rightpanel/sources/{sourceId}": {
+      "get": {
+        "description": "getSourceForRightPanelById",
+        "summary": "getSourceForRightPanelById",
+        "tags": [
+          "Common - Right Panel"
+        ],
+        "operationId": "getSourceForRightPanelById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "sourceId",
+            "in": "path",
+            "description": "ID of Source",
+            "required": true,
+            "type": "string"
+            }],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },   
+     "/common/rightpanel/sourcemappings/{sourcemappingId}": {
+      "get": {
+        "description": "getSourceForRightPanelById",
+        "summary": "getSourceMapForRightPanelById",
+        "tags": [
+          "Common - Right Panel"
+        ],
+        "operationId": "getSourceMapForRightPanelById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "sourcemappingId",
+            "in": "path",
+            "description": "ID of Source Mapping",
+            "required": true,
+            "type": "string"
+            }],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/common/rightpanel/rules/{ruleId}": {
+      "get": {
+        "description": "getSourceForRightPanelById",
+        "summary": "getRuleForRightPanelById",
+        "tags": [
+          "Common - Right Panel"
+        ],
+        "operationId": "getRuleForRightPanelById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ruleId",
+            "in": "path",
+            "description": "ID of Rule",
+            "required": true,
+            "type": "string"
+            }],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/common/rightpanel/actions/{actionId}": {
+      "get": {
+        "description": "getSourceForRightPanelById",
+        "summary": "getActionForRightPanelById",
+        "tags": [
+          "Common - Right Panel"
+        ],
+        "operationId": "getActionForRightPanelById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "actionId",
+            "in": "path",
+            "description": "ID of Action",
+            "required": true,
+            "type": "string"
+            }],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/common/rightpanel/flows/{flowId}": {
+      "get": {
+        "description": "getFlowForRightPanelById",
+        "summary": "getFlowForRightPanelById",
+        "tags": [
+          "Common - Right Panel"
+        ],
+        "operationId": "getFlowForRightPanelById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "flowId",
+            "in": "path",
+            "description": "ID of Flow",
+            "required": true,
+            "type": "string"
+            }],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/common/rightpanel/widgets/{widgetId}": {
+      "get": {
+        "description": "getWidgetForRightPanelById",
+        "summary": "getWidgetForRightPanelById",
+        "tags": [
+          "Common - Right Panel"
+        ],
+        "operationId": "getWidgetForRightPanelById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "widgetId",
+            "in": "path",
+            "description": "ID of Widget",
+            "required": true,
+            "type": "string"
+            }],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/common/rightpanel/dashboards/{dashboardId}": {
+      "get": {
+        "description": "getDashboardForRightPanelById",
+        "summary": "getDashboardForRightPanelById",
+        "tags": [
+          "Common - Right Panel"
+        ],
+        "operationId": "getDashboardForRightPanelById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "dashboardId",
+            "in": "path",
+            "description": "ID of dashboard",
+            "required": true,
+            "type": "string"
+            }],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/common/formatType": {
+      "get": {
+        "description": "fetches the data of formats for date, time, timestamp",
+        "summary": "formatType",
+        "tags": [
+          "Common"
+        ],
+        "operationId": "formatType",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "formatType",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "formats to be displayed according to the user for example dateformat"
+          }
+          
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/common/sources/filter": {
+      "get": {
+        "summary": "getFilteredSources",
+        "tags": [
+          "Common"
+        ],
+        "operationId": "getFilteredSources",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "mappingReq",
+            "in": "query",
+            "required": true,
+            "type": "boolean",
+            "description": ""
+          },
+          {
+            "name": "protocolType",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/common/sourcemappings/getUniqueDetails/{sourceId}": {
+      "get": {
+        "description": "get UniqueField values for SourceMappings with respective sourceId",
+        "summary": "getUniqueFieldDetails",
+        "tags": [
+          "Common"
+        ],
+        "operationId": "getUniqueFieldDetails",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "sourceId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/common/sourcemappings/filter": {
+      "get": {
+        "description": "get Filtered Source Mappings",
+        "summary": "getFilteredSourceMappings",
+        "tags": [
+          "Common"
+        ],
+        "operationId": "getFilteredSourceMappings",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "sourceId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/common/rules/filter": {
+      "post": {
+        "summary": "getFilteredRules",
+        "tags": [
+          "Common"
+        ],
+        "operationId": "getFilteredRules",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/getFilteredRulesRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/common/actions/filter": {
+      "get": {
+        "summary": "getFilteredActions",
+        "tags": [
+          "Common"
+        ],
+        "operationId": "getFilteredActions",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "actionType",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "sourceId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/common/flows/filter": {
+      "get": {
+        "description": "get Filtered flows for Vnode",
+        "summary": "getFilteredFlows",
+        "tags": [
+          "RTBuilder - Common"
+        ],
+        "operationId": "getFilteredFlows",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "isVnodeDetails",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "flowId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/common/flows/source/link": {
+      "post": {
+        "description": "connect source in Commune to Vnode flow",
+        "summary": "linkToCommune",
+        "tags": [
+          "RTBuilder - Common"
+        ],
+        "operationId": "linkToCommune",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/linkToCommune"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/rtbuilder/flows": {
+      "post": {
+        "description": "",
+        "summary": "createFlow",
+        "tags": [
+          "Flow"
+        ],
+        "operationId": "createFlow",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/createFlowRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/rtbuilder/flows/action": {
+      "put": {
+        "description": "",
+        "summary": "Approve/Disapprove Flow",
+        "tags": [
+          "Flow"
+        ],
+        "operationId": "Approve/Disapprove Flow",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DisapproveFlow"
+            }
+          }
+          
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/xbuilder/widgets": {
+      "post": {
+        "description": "",
+        "summary": "createwidget",
+        "tags": [
+          "Widget"
+        ],
+        "operationId": "createwidget",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/createWidgetRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/xbuilder/widgets/{widgetId}": {
+      "get": {
+        "description": "",
+        "summary": "getWidgetById",
+        "tags": [
+          "Widget"
+        ],
+        "operationId": "getWidgetById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "widgetId",
+            "in": "path",
+            "description": "ID of widget to return",
+            "required": true,
+            "type": "string"
+            }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/xbuilder/dashboards": {
+      "post": {
+        "description": "",
+        "summary": "createDashboard",
+        "tags": [
+          "Dashboard"
+        ],
+        "operationId": "createdashboard",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/createDashboardRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/xbuilder/dashboards/{dashboardId}": {
+      "get": {
+        "description": "",
+        "summary": "getDashboardById",
+        "tags": [
+          "Dashboard"
+        ],
+        "operationId": "getDashboardById",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "dashboardId",
+            "in": "path",
+            "description": "ID of dashboard to return",
+            "required": true,
+            "type": "string"
+            }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  
+},
+  "definitions": {
+    
+    "linkToCommune": {
+      "title": "linkToCommune",
+      "example": {
+        "sourceData": {
+          "name": "flow some",
+          "protocolDetails": {
+            "protocol": "HTTPS",
+            "type": "https",
+            "ipOrDomain": "172.30.66.175",
+            "port": "8089"
+          },
+          "url": "https://172.30.66.175:8089",
+          "templateId": "",
+          "sourceMappingReqd": false,
+          "createdBy": "Ajay Ramesh",
+          "resourceDetails": [
+            {
+              "id": "SG_RD_1",
+              "name": "asdasd",
+              "description": "asdasd",
+              "methodOrType": "POST",
+              "header": [
+                "Content-Type:application/json"
+              ],
+              "uniqueKey": "",
+              "isInterpolated": false,
+              "uriOrTopic": "/vnode-application/rest/viewnode/rulebreak/SG_2/FL_34_VN_2",
+              "pollingTime": 10,
+              "paramType": "noparam",
+              "requestPayload": {
+                "fileName": "",
+                "payload": {
+                  "isSourceBasedFlow": true,
+                  "sourceMappingId": [
+                    "SM_2",
+                    "SM_1"
+                  ],
+                  "endpointSelected": [
+                    3,
+                    4,
+                    1,
+                    2
+                  ],
+                  "uniquekey": "deviceId"
+                }
+              },
+              "responsePayload": {
+                "fileName": "",
+                "payload": [
+                  {
+                    "deviceId": 34,
+                    "temp": 45,
+                    "hum": 67,
+                    "iotglueentrytime": 1600159565477
+                  }
+                ]
+              },
+              "dateTime": [
+                {
+                  "key": "",
+                  "format": ""
+                }
+              ],
+              "date": [
+                {
+                  "key": "",
+                  "format": ""
+                }
+              ],
+              "time": [
+                {
+                  "key": "",
+                  "format": ""
+                }
+              ]
+            }
+          ],
+          "createdOn": "",
+          "isDeleted": false
+        },
+        "linkData": {
+          "flowId": "FL_100",
+          "isVnodeLinked": true
+        }
+      },
+      "type": "object",
+      "properties": {
+        "sourceData": {
+          "$ref": "#/definitions/SourceData"
+        },
+        "linkData": {
+          "$ref": "#/definitions/LinkData"
+        }
+      },
+      "required": [
+        "sourceData",
+        "linkData"
+      ]
+    },
+    "SourceData": {
+      "title": "SourceData",
+      "example": {
+        "name": "flow some",
+        "protocolDetails": {
+          "protocol": "HTTPS",
+          "type": "https",
+          "ipOrDomain": "172.30.66.175",
+          "port": "8089"
+        },
+        "url": "https://172.30.66.175:8089",
+        "templateId": "",
+        "sourceMappingReqd": false,
+        "createdBy": "Ajay Ramesh",
+        "resourceDetails": [
+          {
+            "id": "SG_RD_1",
+            "name": "asdasd",
+            "description": "asdasd",
+            "methodOrType": "POST",
+            "header": [
+              "Content-Type:application/json"
+            ],
+            "uniqueKey": "",
+            "isInterpolated": false,
+            "uriOrTopic": "/vnode-application/rest/viewnode/rulebreak/SG_2/FL_34_VN_2",
+            "pollingTime": 10,
+            "paramType": "noparam",
+            "requestPayload": {
+              "fileName": "",
+              "payload": {
+                "isSourceBasedFlow": true,
+                "sourceMappingId": [
+                  "SM_2",
+                  "SM_1"
+                ],
+                "endpointSelected": [
+                  3,
+                  4,
+                  1,
+                  2
+                ],
+                "uniquekey": "deviceId"
+              }
+            },
+            "responsePayload": {
+              "fileName": "",
+              "payload": [
+                {
+                  "deviceId": 34,
+                  "temp": 45,
+                  "hum": 67,
+                  "iotglueentrytime": 1600159565477
+                }
+              ]
+            },
+            "dateTime": [
+              {
+                "key": "",
+                "format": ""
+              }
+            ],
+            "date": [
+              {
+                "key": "",
+                "format": ""
+              }
+            ],
+            "time": [
+              {
+                "key": "",
+                "format": ""
+              }
+            ]
+          }
+        ],
+        "createdOn": "",
+        "isDeleted": false
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "protocolDetails": {
+          "$ref": "#/definitions/ProtocolDetails"
+        },
+        "url": {
+          "type": "string"
+        },
+        "templateId": {
+          "type": "string"
+        },
+        "sourceMappingReqd": {
+          "type": "boolean"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "resourceDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ResourceDetail"
+          }
+        },
+        "createdOn": {
+          "type": "string"
+        },
+        "isDeleted": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "name",
+        "protocolDetails",
+        "url",
+        "templateId",
+        "sourceMappingReqd",
+        "createdBy",
+        "resourceDetails",
+        "createdOn",
+        "isDeleted"
+      ]
+    },
+    
+    
+
+
+
+    "createDashboardRequest": {
+      "title": "createDashboardRequest",
+      "example": {
+        "name": "serverRoom",
+        "description": "server Room",
+        "status": "PUBLISHED",
+        "version": "v1.0",
+        "widgetGroupCount": 6,
+        "roles": [
+          "DASHBOARD_VIEWER"
+        ],
+        "widgetGroupDetails": [
+          {
+            "id": "WG_1",
+            "name": "tempGroup",
+            "widgetCount": 5,
+            "widgets": [
+              {
+                "widgetId": "WD_1",
+                "resourceDetails": {
+                  "sourceId": "SG_1",
+                  "resourceId": "SG_RD_1",
+                  "payloadKeyForChart": ""
+                },
+                "widgetDetails": {
+                  "chartType": "bar",
+                  "subChartType": "simpleBar",
+                  "widgetConfig": {
+                    "title": "room data",
+                    "titleForX": "room number",
+                    "unitForX": "NO",
+                    "dataForX": {
+                      "payloadKey": "roomNo",
+                      "dataType": "number"
+                    },
+                    "seriesDetails": [
+                      {
+                        "id": "SE_1",
+                        "name": "temperature series",
+                        "titleForY": "temperature data",
+                        "unitForY": "C",
+                        "dataForY": {
+                          "payloadKey": "temperature",
+                          "dataType": "number"
+                        }
+                      }
+                    ]
+                  },
+                  "otherConfig": {
+                    "positionX": 40,
+                    "positionY": 60,
+                    "refreshInterval": 10,
+                    "isDownloadable": true
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "individualWidgets": {
+          "id": "IN_1",
+          "name": "",
+          "widgetCount": 5,
+          "widgets": [
+            {
+              "widgetId": "WD_1",
+              "resourceDetails": {
+                "sourceId": "SG_1",
+                "resourceId": "SG_RD_1",
+                "payloadKeyForChart": ""
+              },
+              "widgetDetails": {
+                "chartType": "bar",
+                "subChartType": "simpleBar",
+                "widgetConfig": {
+                  "title": "room data",
+                  "titleForX": "room number",
+                  "unitForX": "NO",
+                  "dataForX": {
+                    "payloadKey": "roomNo",
+                    "dataType": "number"
+                  },
+                  "seriesDetails": [
+                    {
+                      "id": "SE_1",
+                      "name": "temperature series",
+                      "titleForY": "temperature data",
+                      "unitForY": "C",
+                      "dataForY": {
+                        "payloadKey": "temperature",
+                        "dataType": "number"
+                      }
+                    }
+                  ]
+                },
+                "otherConfig": {
+                  "positionX": 40,
+                  "positionY": 60,
+                  "refreshInterval": 10,
+                  "isDownloadable": true
+                }
+              }
+            }
+          ]
+        },
+        "createdBy": "Gabriel Macht"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "widgetGroupCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "widgetGroupDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WidgetGroupDetail"
+          }
+        },
+        "individualWidgets": {
+          "$ref": "#/definitions/IndividualWidgets"
+        },
+        "createdBy": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "description",
+        "status",
+        "version",
+        "widgetGroupCount",
+        "roles",
+        "widgetGroupDetails",
+        "individualWidgets",
+        "createdBy"
+      ]
+    },
+    "WidgetGroupDetail": {
+      "title": "WidgetGroupDetail",
+      "example": {
+        "id": "WG_1",
+        "name": "tempGroup",
+        "widgetCount": 5,
+        "widgets": [
+          {
+            "widgetId": "WD_1",
+            "resourceDetails": {
+              "sourceId": "SG_1",
+              "resourceId": "SG_RD_1",
+              "payloadKeyForChart": ""
+            },
+            "widgetDetails": {
+              "chartType": "bar",
+              "subChartType": "simpleBar",
+              "widgetConfig": {
+                "title": "room data",
+                "titleForX": "room number",
+                "unitForX": "NO",
+                "dataForX": {
+                  "payloadKey": "roomNo",
+                  "dataType": "number"
+                },
+                "seriesDetails": [
+                  {
+                    "id": "SE_1",
+                    "name": "temperature series",
+                    "titleForY": "temperature data",
+                    "unitForY": "C",
+                    "dataForY": {
+                      "payloadKey": "temperature",
+                      "dataType": "number"
+                    }
+                  }
+                ]
+              },
+              "otherConfig": {
+                "positionX": 40,
+                "positionY": 60,
+                "refreshInterval": 10,
+                "isDownloadable": true
+              }
+            }
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "widgetCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "widgets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Widget"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "widgetCount",
+        "widgets"
+      ]
+    },
+    "Widget": {
+      "title": "Widget",
+      "example": {
+        "widgetId": "WD_1",
+        "resourceDetails": {
+          "sourceId": "SG_1",
+          "resourceId": "SG_RD_1",
+          "payloadKeyForChart": ""
+        },
+        "widgetDetails": {
+          "chartType": "bar",
+          "subChartType": "simpleBar",
+          "widgetConfig": {
+            "title": "room data",
+            "titleForX": "room number",
+            "unitForX": "NO",
+            "dataForX": {
+              "payloadKey": "roomNo",
+              "dataType": "number"
+            },
+            "seriesDetails": [
+              {
+                "id": "SE_1",
+                "name": "temperature series",
+                "titleForY": "temperature data",
+                "unitForY": "C",
+                "dataForY": {
+                  "payloadKey": "temperature",
+                  "dataType": "number"
+                }
+              }
+            ]
+          },
+          "otherConfig": {
+            "positionX": 40,
+            "positionY": 60,
+            "refreshInterval": 10,
+            "isDownloadable": true
+          }
+        }
+      },
+      "type": "object",
+      "properties": {
+        "widgetId": {
+          "type": "string"
+        },
+        "resourceDetails": {
+          "$ref": "#/definitions/ResourceDetails"
+        },
+        "widgetDetails": {
+          "$ref": "#/definitions/WidgetDetails"
+        }
+      },
+      "required": [
+        "widgetId",
+        "resourceDetails",
+        "widgetDetails"
+      ]
+    },
+    "OtherConfig": {
+      "title": "OtherConfig",
+      "example": {
+        "positionX": 40,
+        "positionY": 60,
+        "refreshInterval": 10,
+        "isDownloadable": true
+      },
+      "type": "object",
+      "properties": {
+        "positionX": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "positionY": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "refreshInterval": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "isDownloadable": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "positionX",
+        "positionY",
+        "refreshInterval",
+        "isDownloadable"
+      ]
+    },
+    "IndividualWidgets": {
+      "title": "IndividualWidgets",
+      "example": {
+        "id": "IN_1",
+        "name": "",
+        "widgetCount": 5,
+        "widgets": [
+          {
+            "widgetId": "WD_1",
+            "resourceDetails": {
+              "sourceId": "SG_1",
+              "resourceId": "SG_RD_1",
+              "payloadKeyForChart": ""
+            },
+            "widgetDetails": {
+              "chartType": "bar",
+              "subChartType": "simpleBar",
+              "widgetConfig": {
+                "title": "room data",
+                "titleForX": "room number",
+                "unitForX": "NO",
+                "dataForX": {
+                  "payloadKey": "roomNo",
+                  "dataType": "number"
+                },
+                "seriesDetails": [
+                  {
+                    "id": "SE_1",
+                    "name": "temperature series",
+                    "titleForY": "temperature data",
+                    "unitForY": "C",
+                    "dataForY": {
+                      "payloadKey": "temperature",
+                      "dataType": "number"
+                    }
+                  }
+                ]
+              },
+              "otherConfig": {
+                "positionX": 40,
+                "positionY": 60,
+                "refreshInterval": 10,
+                "isDownloadable": true
+              }
+            }
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "widgetCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "widgets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Widget"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "widgetCount",
+        "widgets"
+      ]
+    },
+    
+    
+    
+    "createWidgetRequest": {
+      "title": "createWidgetRequest",
+      "example": {
+        "name": "serverRoomLine",
+        "description": "server Room Line",
+        "roles": [
+          "DASHBOARD_CONFIGURER",
+          "DASHBOARD_MANAGER"
+        ],
+        "resourceDetails": {
+          "sourceId": "SG_1",
+          "resourceId": "SG_RD_1",
+          "payloadKeyForChart": ""
+        },
+        "widgetDetails": {
+          "chartType": "line",
+          "subChartType": "simpleLine",
+          "widgetConfig": {
+            "title": "room data",
+            "titleForX": "room number",
+            "unitForX": "NO",
+            "dataForX": {
+              "payloadKey": "roomNo",
+              "dataType": "number"
+            },
+            "seriesDetails": [
+              {
+                "id": "SE_1",
+                "name": "temperature series",
+                "titleForY": "temperature data",
+                "unitForY": "C",
+                "dataForY": {
+                  "payloadKey": "temperature",
+                  "dataType": "number"
+                }
+              }
+            ]
+          },
+          "otherConfig": {}
+        },
+        "createdBy": "Gabriel Macht"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "resourceDetails": {
+          "$ref": "#/definitions/ResourceDetails"
+        },
+        "widgetDetails": {
+          "$ref": "#/definitions/WidgetDetails"
+        },
+        "createdBy": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "description",
+        "roles",
+        "resourceDetails",
+        "widgetDetails",
+        "createdBy"
+      ]
+    },
+    "ResourceDetails": {
+      "title": "ResourceDetails",
+      "example": {
+        "sourceId": "SG_1",
+        "resourceId": "SG_RD_1",
+        "payloadKeyForChart": ""
+      },
+      "type": "object",
+      "properties": {
+        "sourceId": {
+          "type": "string"
+        },
+        "resourceId": {
+          "type": "string"
+        },
+        "payloadKeyForChart": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "sourceId",
+        "resourceId",
+        "payloadKeyForChart"
+      ]
+    },
+    "WidgetDetails": {
+      "title": "WidgetDetails",
+      "example": {
+        "chartType": "line",
+        "subChartType": "simpleLine",
+        "widgetConfig": {
+          "title": "room data",
+          "titleForX": "room number",
+          "unitForX": "NO",
+          "dataForX": {
+            "payloadKey": "roomNo",
+            "dataType": "number"
+          },
+          "seriesDetails": [
+            {
+              "id": "SE_1",
+              "name": "temperature series",
+              "titleForY": "temperature data",
+              "unitForY": "C",
+              "dataForY": {
+                "payloadKey": "temperature",
+                "dataType": "number"
+              }
+            }
+          ]
+        },
+        "otherConfig": {}
+      },
+      "type": "object",
+      "properties": {
+        "chartType": {
+          "type": "string"
+        },
+        "subChartType": {
+          "type": "string"
+        },
+        "widgetConfig": {
+          "$ref": "#/definitions/WidgetConfig"
+        },
+        "otherConfig": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "chartType",
+        "subChartType",
+        "widgetConfig",
+        "otherConfig"
+      ]
+    },
+    "WidgetConfig": {
+      "title": "WidgetConfig",
+      "example": {
+        "title": "room data",
+        "titleForX": "room number",
+        "unitForX": "NO",
+        "dataForX": {
+          "payloadKey": "roomNo",
+          "dataType": "number"
+        },
+        "seriesDetails": [
+          {
+            "id": "SE_1",
+            "name": "temperature series",
+            "titleForY": "temperature data",
+            "unitForY": "C",
+            "dataForY": {
+              "payloadKey": "temperature",
+              "dataType": "number"
+            }
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "titleForX": {
+          "type": "string"
+        },
+        "unitForX": {
+          "type": "string"
+        },
+        "dataForX": {
+          "$ref": "#/definitions/DataForX"
+        },
+        "seriesDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SeriesDetail"
+          }
+        }
+      },
+      "required": [
+        "title",
+        "titleForX",
+        "unitForX",
+        "dataForX",
+        "seriesDetails"
+      ]
+    },
+    "DataForX": {
+      "title": "DataForX",
+      "example": {
+        "payloadKey": "roomNo",
+        "dataType": "number"
+      },
+      "type": "object",
+      "properties": {
+        "payloadKey": {
+          "type": "string"
+        },
+        "dataType": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "payloadKey",
+        "dataType"
+      ]
+    },
+    "SeriesDetail": {
+      "title": "SeriesDetail",
+      "example": {
+        "id": "SE_1",
+        "name": "temperature series",
+        "titleForY": "temperature data",
+        "unitForY": "C",
+        "dataForY": {
+          "payloadKey": "temperature",
+          "dataType": "number"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "titleForY": {
+          "type": "string"
+        },
+        "unitForY": {
+          "type": "string"
+        },
+        "dataForY": {
+          "$ref": "#/definitions/DataForY"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "titleForY",
+        "unitForY",
+        "dataForY"
+      ]
+    },
+    "DataForY": {
+      "title": "DataForY",
+      "example": {
+        "payloadKey": "temperature",
+        "dataType": "number"
+      },
+      "type": "object",
+      "properties": {
+        "payloadKey": {
+          "type": "string"
+        },
+        "dataType": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "payloadKey",
+        "dataType"
+      ]
+    },
+    
+    "DisapproveFlow":{
+      "title": "DisapproveFlow",
+      "example": {
+        "flowId": "FL_43",
+        "status": "Disapprove",
+        "statusUpdateComment": "flow is Disapproved"
+      },
+      "type": "object",
+      "properties": {
+        "flowId": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "statusUpdateComment": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "flowId",
+        "status",
+        "statusUpdateComment"
+      ]
+    
+    },
+    "ApproveFlow":{
+      "title": "ApproveFlow",
+      "example": {
+        "flowId": "FL_43",
+        "status": "Approve"
+        
+      },
+      "type": "object",
+      "properties": {
+        "flowId": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }        
+      },
+      "required": [
+        "flowId",
+        "status"
+      ]
+    
+    },
+    "createFlowRequest": {
+      "title": "createFlowRequest",
+      "example": {
+        "name": "Flow 10 Approved",
+        "status": "Approved",
+        "description": "Source-WithUKWithTemp",
+        "nodeType": "Flow",
+        "statusUpdateComment": "Right flow",
+        "permissionedBy": "Archana",
+        "nodes": {
+          "Source": {
+            "Source_0": {
+              "nodeType": "SourceGroup",
+              "name": "SourceGroupName",
+              "uniqueResourceSelectedStatus": true,
+              "sourceId": "SG_5",
+              "sourceMappingId": "SM_4",
+              "url": "http://127.0.0.1:8023",
+              "uriOrTopic": "/data?id={deviceID}",
+              "protocol": "HTTP",
+              "uniqueResourceSelected": [
+                "12345Device"
+              ],
+              "methodOrType": "GET",
+              "count": 0,
+              "xPosition": 0.275,
+              "yPosition": 0.238888888888889
+            }
+          },
+          "Rules": {
+            "Rule_1": {
+              "id": "RL_7",
+              "name": "TempRule",
+              "nodeName": "R1",
+              "description": "exp",
+              "type": "simpleExp",
+              "simpleExp": "(temp>27)",
+              "attributeKeysDataType": {
+                "temp": "String"
+              },
+              "nodeType": "Rule",
+              "count": 1,
+              "xPosition": 0.13125,
+              "yPosition": 0.125555555555556
+            },
+            "Rule_2": {
+              "id": "RL_8",
+              "name": "TempRule",
+              "nodeName": "R2",
+              "description": "script",
+              "type": "script",
+              "script": "RTB_SC_4",
+              "attributeKeysDataType": {
+                "temp": "Integer",
+                "deviceID": "String"
+              },
+              "nodeType": "Rule",
+              "count": 1,
+              "xPosition": 0.13125,
+              "yPosition": 0.125555555555556
+            }
+          },
+          "Actions": {
+            "Action_2": {
+              "id": "RTB_AC_01",
+              "name": "EMAIL",
+              "description": "Send mail",
+              "typeOfAction": "email",
+              "fields": {
+                "cc": "swathi_somashekar@thbs.com,prashannakumar_somasundaram@thbs.com,krishnapriya_varanasi@thbs.com",
+                "message": "Welcome to RTBuilder.Please take immediate Action since the set rule has broken.",
+                "subject": "Alert!.Please take immediate Action",
+                "bcc": "krishnapriya_varanasi@thbs.com",
+                "to": "krishnapriya_varanasi@thbs.com",
+                "signature": "Regards,\nIotGlue",
+                "actionMapping": "supervisoremail, vendoremail"
+              },
+              "nodeType": "Action",
+              "nodeName": "email",
+              "count": 3,
+              "xPosition": 0.13125,
+              "yPosition": 0.125555555555556
+            },
+            "Action_4": {
+              "typeOfAction": "sms",
+              "name": "SMS",
+              "nodeName": "R1",
+              "description": "Sendmessage",
+              "id": "RTB_AC_02",
+              "fields": {
+                "toPhoneNumber": "+919551352836,+971989466730",
+                "message": "Welcometo RTBuilder. Please take immediate Action.",
+                "actionMapping": "buheadnumber, managernumber"
+              },
+              "nodeType": "Action",
+              "count": 4,
+              "xPosition": 0.13125,
+              "yPosition": 0.125555555555556
+            },
+            "Action_8": {
+              "typeOfAction": "api",
+              "name": "service",
+              "description": "API or Aervice",
+              "id": "RTB_AC_03",
+              "fields": {
+                "url": "http://182.22.22.2/data",
+                "methodtype": "get",
+                "requestbody": "",
+                "responsebody": "",
+                "header": {
+                  "content-type": "Application/json"
+                }
+              },
+              "nodeType": "Service",
+              "count": 4,
+              "xPosition": 0.13125,
+              "yPosition": 0.125555555555556
+            }
+          },
+          "Visualisation": {},
+          "Trigger": {
+            "Trigger_4": {
+              "windowTimeValueUnit": "MINUTES",
+              "windowTimeValue": "1",
+              "nodeType": "Trigger",
+              "endpointTriggerValueStatus": false,
+              "isSourceBased": false,
+              "triggerCount": [
+                {
+                  "triggerValue": null,
+                  "uniqueKeyValue": "ZYME-9001"
+                },
+                {
+                  "triggerValue": null,
+                  "uniqueKeyValue": "ZYME-9002"
+                },
+                {
+                  "triggerValue": null,
+                  "uniqueKeyValue": "ZYME-9003"
+                }
+              ],
+              "commonTriggerValue": 2,
+              "count": 1,
+              "xPosition": 0.13125,
+              "yPosition": 0.125555555555556
+            }
+          },
+          "Forward": {
+            "Forward_2": {
+              "timerUnit": "MINUTES",
+              "timerValue": 5,
+              "isSourceBased": false,
+              "nodeType": "Forwarder",
+              "count": 1,
+              "xPosition": 0.13125,
+              "yPosition": 0.125555555555556
+            }
+          }
+        },
+        "linearExpression": {
+          "LX1": "Source_0->Rule_1->Action_X->end_0",
+          "LX2": "Source_0->Rule_2->Action_X->end_0"
+        },
+        "connections": []
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "nodeType": {
+          "type": "string"
+        },
+        "statusUpdateComment": {
+          "type": "string"
+        },
+        "permissionedBy": {
+          "type": "string"
+        },
+        "nodes": {
+          "$ref": "#/definitions/Nodes"
+        },
+        "linearExpression": {
+          "$ref": "#/definitions/LinearExpression"
+        },
+        "connections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Connection"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "status",
+        "description",
+        "nodeType",
+        "statusUpdateComment",
+        "permissionedBy",
+        "nodes",
+        "linearExpression",
+        "connections"
+      ]
+    },
+    "Nodes": {
+      "title": "Nodes",
+      "example": {
+        "Source": {
+          "Source_0": {
+            "nodeType": "SourceGroup",
+            "name": "SourceGroupName",
+            "uniqueResourceSelectedStatus": true,
+            "sourceId": "SG_5",
+            "sourceMappingId": "SM_4",
+            "url": "http://127.0.0.1:8023",
+            "uriOrTopic": "/data?id={deviceID}",
+            "protocol": "HTTP",
+            "uniqueResourceSelected": [
+              "12345Device"
+            ],
+            "methodOrType": "GET",
+            "count": 0,
+            "xPosition": 0.275,
+            "yPosition": 0.238888888888889
+          }
+        },
+        "Rules": {
+          "Rule_1": {
+            "id": "RL_7",
+            "name": "TempRule",
+            "nodeName": "R1",
+            "description": "exp",
+            "type": "simpleExp",
+            "simpleExp": "(temp>27)",
+            "attributeKeysDataType": {
+              "temp": "String"
+            },
+            "nodeType": "Rule",
+            "count": 1,
+            "xPosition": 0.13125,
+            "yPosition": 0.125555555555556
+          },
+          "Rule_2": {
+            "id": "RL_8",
+            "name": "TempRule",
+            "nodeName": "R2",
+            "description": "script",
+            "type": "script",
+            "script": "RTB_SC_4",
+            "attributeKeysDataType": {
+              "temp": "Integer",
+              "deviceID": "String"
+            },
+            "nodeType": "Rule",
+            "count": 1,
+            "xPosition": 0.13125,
+            "yPosition": 0.125555555555556
+          }
+        },
+        "Actions": {
+          "Action_2": {
+            "id": "RTB_AC_01",
+            "name": "EMAIL",
+            "description": "Send mail",
+            "typeOfAction": "email",
+            "fields": {
+              "cc": "swathi_somashekar@thbs.com,prashannakumar_somasundaram@thbs.com,krishnapriya_varanasi@thbs.com",
+              "message": "Welcome to RTBuilder.Please take immediate Action since the set rule has broken.",
+              "subject": "Alert!.Please take immediate Action",
+              "bcc": "krishnapriya_varanasi@thbs.com",
+              "to": "krishnapriya_varanasi@thbs.com",
+              "signature": "Regards,\nIotGlue",
+              "actionMapping": "supervisoremail, vendoremail"
+            },
+            "nodeType": "Action",
+            "nodeName": "email",
+            "count": 3,
+            "xPosition": 0.13125,
+            "yPosition": 0.125555555555556
+          },
+          "Action_4": {
+            "typeOfAction": "sms",
+            "name": "SMS",
+            "nodeName": "R1",
+            "description": "Sendmessage",
+            "id": "RTB_AC_02",
+            "fields": {
+              "toPhoneNumber": "+919551352836,+971989466730",
+              "message": "Welcometo RTBuilder. Please take immediate Action.",
+              "actionMapping": "buheadnumber, managernumber"
+            },
+            "nodeType": "Action",
+            "count": 4,
+            "xPosition": 0.13125,
+            "yPosition": 0.125555555555556
+          },
+          "Action_8": {
+            "typeOfAction": "api",
+            "name": "service",
+            "description": "API or Aervice",
+            "id": "RTB_AC_03",
+            "fields": {
+              "url": "http://182.22.22.2/data",
+              "methodtype": "get",
+              "requestbody": "",
+              "responsebody": "",
+              "header": {
+                "content-type": "Application/json"
+              }
+            },
+            "nodeType": "Service",
+            "count": 4,
+            "xPosition": 0.13125,
+            "yPosition": 0.125555555555556
+          }
+        },
+        "Visualisation": {},
+        "Trigger": {
+          "Trigger_4": {
+            "windowTimeValueUnit": "MINUTES",
+            "windowTimeValue": "1",
+            "nodeType": "Trigger",
+            "endpointTriggerValueStatus": false,
+            "isSourceBased": false,
+            "triggerCount": [
+              {
+                "triggerValue": null,
+                "uniqueKeyValue": "ZYME-9001"
+              },
+              {
+                "triggerValue": null,
+                "uniqueKeyValue": "ZYME-9002"
+              },
+              {
+                "triggerValue": null,
+                "uniqueKeyValue": "ZYME-9003"
+              }
+            ],
+            "commonTriggerValue": 2,
+            "count": 1,
+            "xPosition": 0.13125,
+            "yPosition": 0.125555555555556
+          }
+        },
+        "Forward": {
+          "Forward_2": {
+            "timerUnit": "MINUTES",
+            "timerValue": 5,
+            "isSourceBased": false,
+            "nodeType": "Forwarder",
+            "count": 1,
+            "xPosition": 0.13125,
+            "yPosition": 0.125555555555556
+          }
+        }
+      },
+      "type": "object",
+      "properties": {
+        "Source": {
+          "$ref": "#/definitions/Source"
+        },
+        "Rules": {
+          "$ref": "#/definitions/Rules"
+        },
+        "Actions": {
+          "$ref": "#/definitions/Actions"
+        },
+        "Visualisation": {
+          "type": "object"
+        },
+        "Trigger": {
+          "$ref": "#/definitions/Trigger"
+        },
+        "Forward": {
+          "$ref": "#/definitions/Forward"
+        }
+      },
+      "required": [
+        "Source",
+        "Rules",
+        "Actions",
+        "Visualisation",
+        "Trigger",
+        "Forward"
+      ]
+    },
+    "Source": {
+      "title": "Source",
+      "example": {
+        "Source_0": {
+          "nodeType": "SourceGroup",
+          "name": "SourceGroupName",
+          "uniqueResourceSelectedStatus": true,
+          "sourceId": "SG_5",
+          "sourceMappingId": "SM_4",
+          "url": "http://127.0.0.1:8023",
+          "uriOrTopic": "/data?id={deviceID}",
+          "protocol": "HTTP",
+          "uniqueResourceSelected": [
+            "12345Device"
+          ],
+          "methodOrType": "GET",
+          "count": 0,
+          "xPosition": 0.275,
+          "yPosition": 0.238888888888889
+        }
+      },
+      "type": "object",
+      "properties": {
+        "Source_0": {
+          "$ref": "#/definitions/Source0"
+        }
+      },
+      "required": [
+        "Source_0"
+      ]
+    },
+    "Source0": {
+      "title": "Source0",
+      "example": {
+        "nodeType": "SourceGroup",
+        "name": "SourceGroupName",
+        "uniqueResourceSelectedStatus": true,
+        "sourceId": "SG_5",
+        "sourceMappingId": "SM_4",
+        "url": "http://127.0.0.1:8023",
+        "uriOrTopic": "/data?id={deviceID}",
+        "protocol": "HTTP",
+        "uniqueResourceSelected": [
+          "12345Device"
+        ],
+        "methodOrType": "GET",
+        "count": 0,
+        "xPosition": 0.275,
+        "yPosition": 0.238888888888889
+      },
+      "type": "object",
+      "properties": {
+        "nodeType": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "uniqueResourceSelectedStatus": {
+          "type": "boolean"
+        },
+        "sourceId": {
+          "type": "string"
+        },
+        "sourceMappingId": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "uriOrTopic": {
+          "type": "string"
+        },
+        "protocol": {
+          "type": "string"
+        },
+        "uniqueResourceSelected": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "methodOrType": {
+          "type": "string"
+        },
+        "count": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "xPosition": {
+          "type": "number",
+          "format": "double"
+        },
+        "yPosition": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "nodeType",
+        "name",
+        "uniqueResourceSelectedStatus",
+        "sourceId",
+        "sourceMappingId",
+        "url",
+        "uriOrTopic",
+        "protocol",
+        "uniqueResourceSelected",
+        "methodOrType",
+        "count",
+        "xPosition",
+        "yPosition"
+      ]
+    },
+    "Rules": {
+      "title": "Rules",
+      "example": {
+        "Rule_1": {
+          "id": "RL_7",
+          "name": "TempRule",
+          "nodeName": "R1",
+          "description": "exp",
+          "type": "simpleExp",
+          "simpleExp": "(temp>27)",
+          "attributeKeysDataType": {
+            "temp": "String"
+          },
+          "nodeType": "Rule",
+          "count": 1,
+          "xPosition": 0.13125,
+          "yPosition": 0.125555555555556
+        },
+        "Rule_2": {
+          "id": "RL_8",
+          "name": "TempRule",
+          "nodeName": "R2",
+          "description": "script",
+          "type": "script",
+          "script": "RTB_SC_4",
+          "attributeKeysDataType": {
+            "temp": "Integer",
+            "deviceID": "String"
+          },
+          "nodeType": "Rule",
+          "count": 1,
+          "xPosition": 0.13125,
+          "yPosition": 0.125555555555556
+        }
+      },
+      "type": "object",
+      "properties": {
+        "Rule_1": {
+          "$ref": "#/definitions/Rule1"
+        },
+        "Rule_2": {
+          "$ref": "#/definitions/Rule2"
+        }
+      },
+      "required": [
+        "Rule_1",
+        "Rule_2"
+      ]
+    },
+    "Rule1": {
+      "title": "Rule1",
+      "example": {
+        "id": "RL_7",
+        "name": "TempRule",
+        "nodeName": "R1",
+        "description": "exp",
+        "type": "simpleExp",
+        "simpleExp": "(temp>27)",
+        "attributeKeysDataType": {
+          "temp": "String"
+        },
+        "nodeType": "Rule",
+        "count": 1,
+        "xPosition": 0.13125,
+        "yPosition": 0.125555555555556
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "nodeName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "simpleExp": {
+          "type": "string"
+        },
+        "attributeKeysDataType": {
+          "$ref": "#/definitions/AttributeKeysDataType"
+        },
+        "nodeType": {
+          "type": "string"
+        },
+        "count": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "xPosition": {
+          "type": "number",
+          "format": "double"
+        },
+        "yPosition": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "nodeName",
+        "description",
+        "type",
+        "simpleExp",
+        "attributeKeysDataType",
+        "nodeType",
+        "count",
+        "xPosition",
+        "yPosition"
+      ]
+    },
+    "AttributeKeysDataType": {
+      "title": "AttributeKeysDataType",
+      "example": {
+        "temp": "String"
+      },
+      "type": "object",
+      "properties": {
+        "temp": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "temp"
+      ]
+    },
+    "Rule2": {
+      "title": "Rule2",
+      "example": {
+        "id": "RL_8",
+        "name": "TempRule",
+        "nodeName": "R2",
+        "description": "script",
+        "type": "script",
+        "script": "RTB_SC_4",
+        "attributeKeysDataType": {
+          "temp": "Integer",
+          "deviceID": "String"
+        },
+        "nodeType": "Rule",
+        "count": 1,
+        "xPosition": 0.13125,
+        "yPosition": 0.125555555555556
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "nodeName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "script": {
+          "type": "string"
+        },
+        "attributeKeysDataType": {
+          "$ref": "#/definitions/AttributeKeysDataType1"
+        },
+        "nodeType": {
+          "type": "string"
+        },
+        "count": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "xPosition": {
+          "type": "number",
+          "format": "double"
+        },
+        "yPosition": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "nodeName",
+        "description",
+        "type",
+        "script",
+        "attributeKeysDataType",
+        "nodeType",
+        "count",
+        "xPosition",
+        "yPosition"
+      ]
+    },
+    "AttributeKeysDataType1": {
+      "title": "AttributeKeysDataType1",
+      "example": {
+        "temp": "Integer",
+        "deviceID": "String"
+      },
+      "type": "object",
+      "properties": {
+        "temp": {
+          "type": "string"
+        },
+        "deviceID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "temp",
+        "deviceID"
+      ]
+    },
+    "Actions": {
+      "title": "Actions",
+      "example": {
+        "Action_2": {
+          "id": "RTB_AC_01",
+          "name": "EMAIL",
+          "description": "Send mail",
+          "typeOfAction": "email",
+          "fields": {
+            "cc": "swathi_somashekar@thbs.com,prashannakumar_somasundaram@thbs.com,krishnapriya_varanasi@thbs.com",
+            "message": "Welcome to RTBuilder.Please take immediate Action since the set rule has broken.",
+            "subject": "Alert!.Please take immediate Action",
+            "bcc": "krishnapriya_varanasi@thbs.com",
+            "to": "krishnapriya_varanasi@thbs.com",
+            "signature": "Regards,\nIotGlue",
+            "actionMapping": "supervisoremail, vendoremail"
+          },
+          "nodeType": "Action",
+          "nodeName": "email",
+          "count": 3,
+          "xPosition": 0.13125,
+          "yPosition": 0.125555555555556
+        },
+        "Action_4": {
+          "typeOfAction": "sms",
+          "name": "SMS",
+          "nodeName": "R1",
+          "description": "Sendmessage",
+          "id": "RTB_AC_02",
+          "fields": {
+            "toPhoneNumber": "+919551352836,+971989466730",
+            "message": "Welcometo RTBuilder. Please take immediate Action.",
+            "actionMapping": "buheadnumber, managernumber"
+          },
+          "nodeType": "Action",
+          "count": 4,
+          "xPosition": 0.13125,
+          "yPosition": 0.125555555555556
+        },
+        "Action_8": {
+          "typeOfAction": "api",
+          "name": "service",
+          "description": "API or Aervice",
+          "id": "RTB_AC_03",
+          "fields": {
+            "url": "http://182.22.22.2/data",
+            "methodtype": "get",
+            "requestbody": "",
+            "responsebody": "",
+            "header": {
+              "content-type": "Application/json"
+            }
+          },
+          "nodeType": "Service",
+          "count": 4,
+          "xPosition": 0.13125,
+          "yPosition": 0.125555555555556
+        }
+      },
+      "type": "object",
+      "properties": {
+        "Action_2": {
+          "$ref": "#/definitions/Action2"
+        },
+        "Action_4": {
+          "$ref": "#/definitions/Action4"
+        },
+        "Action_8": {
+          "$ref": "#/definitions/Action8"
+        }
+      },
+      "required": [
+        "Action_2",
+        "Action_4",
+        "Action_8"
+      ]
+    },
+    "Action2": {
+      "title": "Action2",
+      "example": {
+        "id": "RTB_AC_01",
+        "name": "EMAIL",
+        "description": "Send mail",
+        "typeOfAction": "email",
+        "fields": {
+          "cc": "swathi_somashekar@thbs.com,prashannakumar_somasundaram@thbs.com,krishnapriya_varanasi@thbs.com",
+          "message": "Welcome to RTBuilder.Please take immediate Action since the set rule has broken.",
+          "subject": "Alert!.Please take immediate Action",
+          "bcc": "krishnapriya_varanasi@thbs.com",
+          "to": "krishnapriya_varanasi@thbs.com",
+          "signature": "Regards,\nIotGlue",
+          "actionMapping": "supervisoremail, vendoremail"
+        },
+        "nodeType": "Action",
+        "nodeName": "email",
+        "count": 3,
+        "xPosition": 0.13125,
+        "yPosition": 0.125555555555556
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "typeOfAction": {
+          "type": "string"
+        },
+        "fields": {
+          "$ref": "#/definitions/Fields"
+        },
+        "nodeType": {
+          "type": "string"
+        },
+        "nodeName": {
+          "type": "string"
+        },
+        "count": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "xPosition": {
+          "type": "number",
+          "format": "double"
+        },
+        "yPosition": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "typeOfAction",
+        "fields",
+        "nodeType",
+        "nodeName",
+        "count",
+        "xPosition",
+        "yPosition"
+      ]
+    },
+    "Fields": {
+      "title": "Fields",
+      "example": {
+        "cc": "swathi_somashekar@thbs.com,prashannakumar_somasundaram@thbs.com,krishnapriya_varanasi@thbs.com",
+        "message": "Welcome to RTBuilder.Please take immediate Action since the set rule has broken.",
+        "subject": "Alert!.Please take immediate Action",
+        "bcc": "krishnapriya_varanasi@thbs.com",
+        "to": "krishnapriya_varanasi@thbs.com",
+        "signature": "Regards,\nIotGlue",
+        "actionMapping": "supervisoremail, vendoremail"
+      },
+      "type": "object",
+      "properties": {
+        "cc": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "bcc": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "signature": {
+          "type": "string"
+        },
+        "actionMapping": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cc",
+        "message",
+        "subject",
+        "bcc",
+        "to",
+        "signature",
+        "actionMapping"
+      ]
+    },
+    "Action4": {
+      "title": "Action4",
+      "example": {
+        "typeOfAction": "sms",
+        "name": "SMS",
+        "nodeName": "R1",
+        "description": "Sendmessage",
+        "id": "RTB_AC_02",
+        "fields": {
+          "toPhoneNumber": "+919551352836,+971989466730",
+          "message": "Welcometo RTBuilder. Please take immediate Action.",
+          "actionMapping": "buheadnumber, managernumber"
+        },
+        "nodeType": "Action",
+        "count": 4,
+        "xPosition": 0.13125,
+        "yPosition": 0.125555555555556
+      },
+      "type": "object",
+      "properties": {
+        "typeOfAction": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "nodeName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "fields": {
+          "$ref": "#/definitions/Fields1"
+        },
+        "nodeType": {
+          "type": "string"
+        },
+        "count": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "xPosition": {
+          "type": "number",
+          "format": "double"
+        },
+        "yPosition": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "typeOfAction",
+        "name",
+        "nodeName",
+        "description",
+        "id",
+        "fields",
+        "nodeType",
+        "count",
+        "xPosition",
+        "yPosition"
+      ]
+    },
+    "Fields1": {
+      "title": "Fields1",
+      "example": {
+        "toPhoneNumber": "+919551352836,+971989466730",
+        "message": "Welcometo RTBuilder. Please take immediate Action.",
+        "actionMapping": "buheadnumber, managernumber"
+      },
+      "type": "object",
+      "properties": {
+        "toPhoneNumber": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "actionMapping": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "toPhoneNumber",
+        "message",
+        "actionMapping"
+      ]
+    },
+    "Action8": {
+      "title": "Action8",
+      "example": {
+        "typeOfAction": "api",
+        "name": "service",
+        "description": "API or Aervice",
+        "id": "RTB_AC_03",
+        "fields": {
+          "url": "http://182.22.22.2/data",
+          "methodtype": "get",
+          "requestbody": "",
+          "responsebody": "",
+          "header": {
+            "content-type": "Application/json"
+          }
+        },
+        "nodeType": "Service",
+        "count": 4,
+        "xPosition": 0.13125,
+        "yPosition": 0.125555555555556
+      },
+      "type": "object",
+      "properties": {
+        "typeOfAction": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "fields": {
+          "$ref": "#/definitions/Fields2"
+        },
+        "nodeType": {
+          "type": "string"
+        },
+        "count": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "xPosition": {
+          "type": "number",
+          "format": "double"
+        },
+        "yPosition": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "typeOfAction",
+        "name",
+        "description",
+        "id",
+        "fields",
+        "nodeType",
+        "count",
+        "xPosition",
+        "yPosition"
+      ]
+    },
+    "Fields2": {
+      "title": "Fields2",
+      "example": {
+        "url": "http://182.22.22.2/data",
+        "methodtype": "get",
+        "requestbody": "",
+        "responsebody": "",
+        "header": {
+          "content-type": "Application/json"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "methodtype": {
+          "type": "string"
+        },
+        "requestbody": {
+          "type": "string"
+        },
+        "responsebody": {
+          "type": "string"
+        },
+        "header": {
+          "$ref": "#/definitions/Header"
+        }
+      },
+      "required": [
+        "url",
+        "methodtype",
+        "requestbody",
+        "responsebody",
+        "header"
+      ]
+    },
+    "Trigger": {
+      "title": "Trigger",
+      "example": {
+        "Trigger_4": {
+          "windowTimeValueUnit": "MINUTES",
+          "windowTimeValue": "1",
+          "nodeType": "Trigger",
+          "endpointTriggerValueStatus": false,
+          "isSourceBased": false,
+          "triggerCount": [
+            {
+              "triggerValue": null,
+              "uniqueKeyValue": "ZYME-9001"
+            },
+            {
+              "triggerValue": null,
+              "uniqueKeyValue": "ZYME-9002"
+            },
+            {
+              "triggerValue": null,
+              "uniqueKeyValue": "ZYME-9003"
+            }
+          ],
+          "commonTriggerValue": 2,
+          "count": 1,
+          "xPosition": 0.13125,
+          "yPosition": 0.125555555555556
+        }
+      },
+      "type": "object",
+      "properties": {
+        "Trigger_4": {
+          "$ref": "#/definitions/Trigger4"
+        }
+      },
+      "required": [
+        "Trigger_4"
+      ]
+    },
+    "Trigger4": {
+      "title": "Trigger4",
+      "example": {
+        "windowTimeValueUnit": "MINUTES",
+        "windowTimeValue": "1",
+        "nodeType": "Trigger",
+        "endpointTriggerValueStatus": false,
+        "isSourceBased": false,
+        "triggerCount": [
+          {
+            "triggerValue": null,
+            "uniqueKeyValue": "ZYME-9001"
+          },
+          {
+            "triggerValue": null,
+            "uniqueKeyValue": "ZYME-9002"
+          },
+          {
+            "triggerValue": null,
+            "uniqueKeyValue": "ZYME-9003"
+          }
+        ],
+        "commonTriggerValue": 2,
+        "count": 1,
+        "xPosition": 0.13125,
+        "yPosition": 0.125555555555556
+      },
+      "type": "object",
+      "properties": {
+        "windowTimeValueUnit": {
+          "type": "string"
+        },
+        "windowTimeValue": {
+          "type": "string"
+        },
+        "nodeType": {
+          "type": "string"
+        },
+        "endpointTriggerValueStatus": {
+          "type": "boolean"
+        },
+        "isSourceBased": {
+          "type": "boolean"
+        },
+        "triggerCount": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TriggerCount"
+          }
+        },
+        "commonTriggerValue": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "count": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "xPosition": {
+          "type": "number",
+          "format": "double"
+        },
+        "yPosition": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "windowTimeValueUnit",
+        "windowTimeValue",
+        "nodeType",
+        "endpointTriggerValueStatus",
+        "isSourceBased",
+        "triggerCount",
+        "commonTriggerValue",
+        "count",
+        "xPosition",
+        "yPosition"
+      ]
+    },
+    "TriggerCount": {
+      "title": "TriggerCount",
+      "example": {
+        "triggerValue": null,
+        "uniqueKeyValue": "ZYME-9001"
+      },
+      "type": "object",
+      "properties": {
+        "triggerValue": {
+          "type": "string"
+        },
+        "uniqueKeyValue": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "triggerValue",
+        "uniqueKeyValue"
+      ]
+    },
+    "Forward": {
+      "title": "Forward",
+      "example": {
+        "Forward_2": {
+          "timerUnit": "MINUTES",
+          "timerValue": 5,
+          "isSourceBased": false,
+          "nodeType": "Forwarder",
+          "count": 1,
+          "xPosition": 0.13125,
+          "yPosition": 0.125555555555556
+        }
+      },
+      "type": "object",
+      "properties": {
+        "Forward_2": {
+          "$ref": "#/definitions/Forward2"
+        }
+      },
+      "required": [
+        "Forward_2"
+      ]
+    },
+    "Forward2": {
+      "title": "Forward2",
+      "example": {
+        "timerUnit": "MINUTES",
+        "timerValue": 5,
+        "isSourceBased": false,
+        "nodeType": "Forwarder",
+        "count": 1,
+        "xPosition": 0.13125,
+        "yPosition": 0.125555555555556
+      },
+      "type": "object",
+      "properties": {
+        "timerUnit": {
+          "type": "string"
+        },
+        "timerValue": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "isSourceBased": {
+          "type": "boolean"
+        },
+        "nodeType": {
+          "type": "string"
+        },
+        "count": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "xPosition": {
+          "type": "number",
+          "format": "double"
+        },
+        "yPosition": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "timerUnit",
+        "timerValue",
+        "isSourceBased",
+        "nodeType",
+        "count",
+        "xPosition",
+        "yPosition"
+      ]
+    },
+    "LinearExpression": {
+      "title": "LinearExpression",
+      "example": {
+        "LX1": "Source_0->Rule_1->Action_X->end_0",
+        "LX2": "Source_0->Rule_2->Action_X->end_0"
+      },
+      "type": "object",
+      "properties": {
+        "LX1": {
+          "type": "string"
+        },
+        "LX2": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "LX1",
+        "LX2"
+      ]
+    },
+    "Connection": {
+      "title": "Connection",
+      "type": "object",
+      "properties": {
+        "connectionId": {
+          "type": "string"
+        },
+        "nodeSourceId": {
+          "type": "string"
+        },
+        "nodeTargetId": {
+          "type": "string"
+        },
+        "anchors": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        }
+      },
+      "required": [
+        "connectionId",
+        "nodeSourceId",
+        "nodeTargetId",
+        "anchors"
+      ]
+    },
+
+  
+
+    "createTemplateRequest": {
+      "title": "createTemplateRequest",
+      "example": {
+        "templateName": "Medicinal vehicles",
+        "description": "This template is to collect information regarding medicinal vehicles",
+        "templateFields": [
+          {
+            "fieldName": "vehicleName",
+            "fieldType": "string",
+            "isMandatory": true,
+            "isEncrpyted": true
+          },
+          {
+            "fieldName": "vehicleType",
+            "fieldType": "string",
+            "isMandatory": true,
+            "isEncrpyted": false
+          },
+          {
+            "fieldName": "vehicleNumber",
+            "fieldType": "string",
+            "isMandatory": true,
+            "isEncrpyted": true
+          },
+          {
+            "fieldName": "supportEmail",
+            "fieldType": "Email",
+            "isMandatory": true,
+            "isEncrpyted": true
+          },
+          {
+            "fieldName": "supportPhNo",
+            "fieldType": "PhoneNumber",
+            "country": "India",
+            "countryCode": "+91",
+            "regex": "^[6789]\\d{9}$",
+            "isMandatory": true,
+            "isEncrpyted": true
+          }
+        ],
+        "createdBy": "ajayn"
+      },
+      "type": "object",
+      "properties": {
+        "templateName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "templateFields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TemplateField"
+          }
+        },
+        "createdBy": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "templateName",
+        "description",
+        "templateFields",
+        "createdBy"
+      ]
+    },
+    "TemplateField": {
+      "title": "TemplateField",
+      "example": {
+        "fieldName": "vehicleName",
+        "fieldType": "string",
+        "isMandatory": true,
+        "isEncrpyted": true
+      },
+      "type": "object",
+      "properties": {
+        "fieldName": {
+          "type": "string"
+        },
+        "fieldType": {
+          "type": "string"
+        },
+        "isMandatory": {
+          "type": "boolean"
+        },
+        "isEncrpyted": {
+          "type": "boolean"
+        },
+        "country": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "regex": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fieldName",
+        "fieldType",
+        "isMandatory",
+        "isEncrpyted"
+      ]
+    },
+    "updateTemplateByIdRequest": {
+      "title": "updateTemplateByIdRequest",
+      "example": {
+        "templateName": "Medicinal vehicles gtttt",
+        "description": "This template is to collect information regarding medicinal vehicles",
+        "templateFields": [
+          {
+            "fieldName": "vehicleName",
+            "fieldType": "string",
+            "isMandatory": true,
+            "isEncrpyted": true
+          },
+          {
+            "fieldName": "vehicleType",
+            "fieldType": "string",
+            "isMandatory": true,
+            "isEncrpyted": false
+          },
+          {
+            "fieldName": "vehicleNumber",
+            "fieldType": "string",
+            "isMandatory": true,
+            "isEncrpyted": true
+          },
+          {
+            "fieldName": "supportEmail",
+            "fieldType": "Email",
+            "isMandatory": true,
+            "isEncrpyted": true
+          },
+          {
+            "fieldName": "supportPhNo",
+            "fieldType": "PhoneNumber",
+            "country": "India",
+            "countryCode": "+91",
+            "regex": "^[6789]\\d{9}$",
+            "isMandatory": true,
+            "isEncrpyted": true
+          }
+        ],
+        "createdBy": "ajayn",
+        "createdOn": "2019-09-27T10:31:41.985Z",
+        "modifiedBy": "ajayn"
+      },
+      "type": "object",
+      "properties": {
+        "templateName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "templateFields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TemplateField"
+          }
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "createdOn": {
+          "type": "string"
+        },
+        "modifiedBy": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "templateName",
+        "description",
+        "templateFields",
+        "createdBy",
+        "createdOn",
+        "modifiedBy"
+      ]
+    },
+    "createSourceRequest": {
+      "title": "createSourceRequest",
+      "example": {
+        "name": "Source",
+        "protocolDetails": {
+          "protocol": "MQTT",
+          "type": "tcp",
+          "ipOrDomain": "192.168.0.1",
+          "port": 1883
+        },
+        "url": "tcp://192.168.0.1:1883",
+        "templateId": "1",
+        "sourceMappingReqd": true,
+        "resourceDetails": [
+          {
+            "id": "SG_RD_1",
+            "name": "First Endpoint",
+            "description": "Source with Unique key and  with template",
+            "methodOrType": "GET",
+            "header": {
+              "content-type": "Application/json"
+            },
+            "responsePayload": {
+              "fileName": "",
+              "payload": {
+                "device_id": 75,
+                "temp": 30
+              },
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "device_id": {
+                    "type": "number"
+                  },
+                  "temp": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "device_id",
+                  "temp",
+                  "humd"
+                ]
+              }
+            },
+            "requestPayload": {},
+            "uniqueKey": "device_id",
+            "uriOrTopic": "topic-1",
+            "pollingTime": 0,
+            "paramType": "none",
+            "dateTime": {}
+          }
+        ],
+        "createdBy": "Santosh"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "protocolDetails": {
+          "$ref": "#/definitions/ProtocolDetails"
+        },
+        "url": {
+          "type": "string"
+        },
+        "templateId": {
+          "type": "string"
+        },
+        "sourceMappingReqd": {
+          "type": "boolean"
+        },
+        "resourceDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ResourceDetail"
+          }
+        },
+        "createdBy": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "protocolDetails",
+        "url",
+        "templateId",
+        "sourceMappingReqd",
+        "resourceDetails",
+        "createdBy"
+      ]
+    },
+    "ProtocolDetails": {
+      "title": "ProtocolDetails",
+      "example": {
+        "protocol": "MQTT",
+        "type": "tcp",
+        "ipOrDomain": "192.168.0.1",
+        "port": 1883
+      },
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "ipOrDomain": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "protocol",
+        "type",
+        "ipOrDomain",
+        "port"
+      ]
+    },
+    "ResourceDetail": {
+      "title": "ResourceDetail",
+      "example": {
+        "id": "SG_RD_1",
+        "name": "First Endpoint",
+        "description": "Source with Unique key and  with template",
+        "methodOrType": "GET",
+        "header": {
+          "content-type": "Application/json"
+        },
+        "responsePayload": {
+          "fileName": "",
+          "payload": {
+            "device_id": 75,
+            "temp": 30
+          },
+          "schema": {
+            "type": "object",
+            "properties": {
+              "device_id": {
+                "type": "number"
+              },
+              "temp": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "device_id",
+              "temp",
+              "humd"
+            ]
+          }
+        },
+        "requestPayload": {},
+        "uniqueKey": "device_id",
+        "uriOrTopic": "topic-1",
+        "pollingTime": 0,
+        "paramType": "none",
+        "dateTime": {}
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "methodOrType": {
+          "type": "string"
+        },
+        "header": {
+          "$ref": "#/definitions/Header"
+        },
+        "responsePayload": {
+          "$ref": "#/definitions/ResponsePayload"
+        },
+        "requestPayload": {
+          "type": "object"
+        },
+        "uniqueKey": {
+          "type": "string"
+        },
+        "uriOrTopic": {
+          "type": "string"
+        },
+        "pollingTime": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "paramType": {
+          "type": "string"
+        },
+        "dateTime": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "methodOrType",
+        "header",
+        "responsePayload",
+        "requestPayload",
+        "uniqueKey",
+        "uriOrTopic",
+        "pollingTime",
+        "paramType",
+        "dateTime"
+      ]
+    },
+    "Header": {
+      "title": "Header",
+      "example": {
+        "content-type": "Application/json"
+      },
+      "type": "object",
+      "properties": {
+        "content-type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "content-type"
+      ]
+    },
+    "ResponsePayload": {
+      "title": "ResponsePayload",
+      "example": {
+        "fileName": "",
+        "payload": {
+          "device_id": 75,
+          "temp": 30
+        },
+        "schema": {
+          "type": "object",
+          "properties": {
+            "device_id": {
+              "type": "number"
+            },
+            "temp": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "device_id",
+            "temp",
+            "humd"
+          ]
+        }
+      },
+      "type": "object",
+      "properties": {
+        "fileName": {
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/definitions/Payload"
+        },
+        "schema": {
+          "$ref": "#/definitions/Schema"
+        }
+      },
+      "required": [
+        "fileName",
+        "payload",
+        "schema"
+      ]
+    },
+    "Payload": {
+      "title": "Payload",
+      "example": {
+        "device_id": 75,
+        "temp": 30
+      },
+      "type": "object",
+      "properties": {
+        "device_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "temp": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "device_id",
+        "temp"
+      ]
+    },
+    "Schema": {
+      "title": "Schema",
+      "example": {
+        "type": "object",
+        "properties": {
+          "device_id": {
+            "type": "number"
+          },
+          "temp": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "device_id",
+          "temp",
+          "humd"
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "properties": {
+          "$ref": "#/definitions/Properties"
+        },
+        "required": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "type",
+        "properties",
+        "required"
+      ]
+    },
+    "Properties": {
+      "title": "Properties",
+      "example": {
+        "device_id": {
+          "type": "number"
+        },
+        "temp": {
+          "type": "number"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "device_id": {
+          "$ref": "#/definitions/DeviceId"
+        },
+        "temp": {
+          "$ref": "#/definitions/Temp"
+        }
+      },
+      "required": [
+        "device_id",
+        "temp"
+      ]
+    },
+    "DeviceId": {
+      "title": "DeviceId",
+      "example": {
+        "type": "number"
+      },
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ]
+    },
+    "Temp": {
+      "title": "Temp",
+      "example": {
+        "type": "number"
+      },
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ]
+    },
+    "updateSourceByIdRequest": {
+      "title": "updateSourceByIdRequest",
+      "example": {
+        "name": "Source1",
+        "protocolDetails": {
+          "protocol": "MQTT",
+          "type": "tcp",
+          "ipOrDomain": "192.168.0.1",
+          "port": 1883
+        },
+        "url": "tcp://192.168.0.1:1883",
+        "templateId": "1",
+        "sourceMappingReqd": true,
+        "resourceDetails": [
+          {
+            "id": "SG_RD_1",
+            "name": "First Endpoint",
+            "description": "Source with Unique key and  with template",
+            "methodOrType": "GET",
+            "header": {
+              "content-type": "Application/json"
+            },
+            "responsePayload": {
+              "fileName": "",
+              "payload": {
+                "device_id": 75,
+                "temp": 30
+              },
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "device_id": {
+                    "type": "number"
+                  },
+                  "temp": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "device_id",
+                  "temp",
+                  "humd"
+                ]
+              }
+            },
+            "requestPayload": {},
+            "uniqueKey": "device_id",
+            "uriOrTopic": "topic-1",
+            "pollingTime": 0,
+            "paramType": "none",
+            "dateTime": {}
+          }
+        ],
+        "createdBy": "Santosh",
+        "createdOn": "2019-01-22T10:03:51.724Z",
+        "modifiedBy": "Santosh"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "protocolDetails": {
+          "$ref": "#/definitions/ProtocolDetails"
+        },
+        "url": {
+          "type": "string"
+        },
+        "templateId": {
+          "type": "string"
+        },
+        "sourceMappingReqd": {
+          "type": "boolean"
+        },
+        "resourceDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ResourceDetail"
+          }
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "createdOn": {
+          "type": "string"
+        },
+        "modifiedBy": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "protocolDetails",
+        "url",
+        "templateId",
+        "sourceMappingReqd",
+        "resourceDetails",
+        "createdBy",
+        "createdOn",
+        "modifiedBy"
+      ]
+    },
+    "createSourceMappingRequest": {
+      "title": "createSourceMappingRequest",
+      "example": {
+        "name": "Source One",
+        "sourceId": "SG_4",
+        "uniqueKey": "device_id",
+        "mappingDetails": [
+          {
+            "id": "SM_MD_1",
+            "name": "deviceThree",
+            "device_id": 10001,
+            "metaInfo": {
+              "device_id": 10001,
+              "fieldOne": "Tata Harrier",
+              "fieldTwo": "MG Hector",
+              "fieldThree": "KA01F4545",
+              "fieldFour": "test@gmail.com"
+            },
+            "isActive": true
+          },
+          {
+            "id": "SM_MD_2",
+            "name": "deviceFour",
+            "device_id": 10002,
+            "metaInfo": {
+              "device_id": 10002,
+              "fieldOne": "Tata Tiago",
+              "fieldTwo": "Sedan",
+              "fieldThree": "KA01F3475",
+              "fieldFour": "test4@gmail.com"
+            },
+            "isActive": true
+          }
+        ],
+        "createdBy": ""
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "sourceId": {
+          "type": "string"
+        },
+        "uniqueKey": {
+          "type": "string"
+        },
+        "mappingDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MappingDetail"
+          }
+        },
+        "createdBy": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "sourceId",
+        "uniqueKey",
+        "mappingDetails",
+        "createdBy"
+      ]
+    },
+    "MappingDetail": {
+      "title": "MappingDetail",
+      "example": {
+        "id": "SM_MD_1",
+        "name": "deviceThree",
+        "device_id": 10001,
+        "metaInfo": {
+          "device_id": 10001,
+          "fieldOne": "Tata Harrier",
+          "fieldTwo": "MG Hector",
+          "fieldThree": "KA01F4545",
+          "fieldFour": "test@gmail.com"
+        },
+        "isActive": true
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "device_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "metaInfo": {
+          "$ref": "#/definitions/MetaInfo"
+        },
+        "isActive": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "device_id",
+        "metaInfo",
+        "isActive"
+      ]
+    },
+    "MetaInfo": {
+      "title": "MetaInfo",
+      "example": {
+        "device_id": 10001,
+        "fieldOne": "Tata Harrier",
+        "fieldTwo": "MG Hector",
+        "fieldThree": "KA01F4545",
+        "fieldFour": "test@gmail.com"
+      },
+      "type": "object",
+      "properties": {
+        "device_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "fieldOne": {
+          "type": "string"
+        },
+        "fieldTwo": {
+          "type": "string"
+        },
+        "fieldThree": {
+          "type": "string"
+        },
+        "fieldFour": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "device_id",
+        "fieldOne",
+        "fieldTwo",
+        "fieldThree",
+        "fieldFour"
+      ]
+    },
+    "updateSourceMappingByIdRequest": {
+      "title": "updateSourceMappingByIdRequest",
+      "example": {
+        "name": "Source One dd",
+        "sourceId": "SG_4",
+        "uniqueKey": "device_id",
+        "mappingDetails": [
+          {
+            "id": "SM_MD_1",
+            "name": "deviceThree",
+            "device_id": 10001,
+            "metaInfo": {
+              "device_id": 10001,
+              "fieldOne": "Tata Harrier",
+              "fieldTwo": "MG Hector",
+              "fieldThree": "KA01F4545",
+              "fieldFour": "test@gmail.com"
+            },
+            "isActive": true
+          },
+          {
+            "id": "SM_MD_2",
+            "name": "deviceFour",
+            "device_id": 10002,
+            "metaInfo": {
+              "device_id": 10002,
+              "fieldOne": "Tata Tiago",
+              "fieldTwo": "Sedan",
+              "fieldThree": "KA01F3475",
+              "fieldFour": "test4@gmail.com"
+            },
+            "isActive": true
+          }
+        ],
+        "createdBy": "",
+        "createdOn": "",
+        "modifiedBy": ""
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "sourceId": {
+          "type": "string"
+        },
+        "uniqueKey": {
+          "type": "string"
+        },
+        "mappingDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MappingDetail"
+          }
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "createdOn": {
+          "type": "string"
+        },
+        "modifiedBy": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "sourceId",
+        "uniqueKey",
+        "mappingDetails",
+        "createdBy",
+        "createdOn",
+        "modifiedBy"
+      ]
+    },
+    "createRuleRequest": {
+      "title": "createRuleRequest",
+      "example": {
+        "description": "script test",
+        "nodeType": "Rule",
+        "sourceType": "Device",
+        "sourceId": "C_DR_5",
+        "type": "script",
+        "protocol": "MQTT",
+        "simpleExp": "",
+        "complexExp": "",
+        "script": "RTB_SC_6",
+        "status": "Approved",
+        "topicOrVersionChosenOrUri": "Fleet Topic-1",
+        "createdBy": "ajayn",
+        "createdOn": "2019-09-30T09:50:27.403Z",
+        "modifiedOn": "",
+        "modifiedBy": "",
+        "name": "OLA script",
+        "statusUpdateComment": ""
+      },
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "nodeType": {
+          "type": "string"
+        },
+        "sourceType": {
+          "type": "string"
+        },
+        "sourceId": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "protocol": {
+          "type": "string"
+        },
+        "simpleExp": {
+          "type": "string"
+        },
+        "complexExp": {
+          "type": "string"
+        },
+        "script": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "topicOrVersionChosenOrUri": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "createdOn": {
+          "type": "string"
+        },
+        "modifiedOn": {
+          "type": "string"
+        },
+        "modifiedBy": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "statusUpdateComment": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "nodeType",
+        "sourceType",
+        "sourceId",
+        "type",
+        "protocol",
+        "simpleExp",
+        "complexExp",
+        "script",
+        "status",
+        "topicOrVersionChosenOrUri",
+        "createdBy",
+        "createdOn",
+        "modifiedOn",
+        "modifiedBy",
+        "name",
+        "statusUpdateComment"
+      ]
+    },
+    "updateRuleByIdRequest": {
+      "title": "updateRuleByIdRequest",
+      "example": {
+        "description": "script test",
+        "nodeType": "Rule",
+        "sourceType": "Device",
+        "sourceId": "C_DR_5",
+        "type": "script",
+        "protocol": "MQTT",
+        "simpleExp": "",
+        "complexExp": "",
+        "script": "RTB_SC_6",
+        "status": "Approved",
+        "topicOrVersionChosenOrUri": "Fleet Topic-1",
+        "createdBy": "ajayn",
+        "createdOn": "2019-09-30T09:50:27.403Z",
+        "modifiedOn": "",
+        "modifiedBy": "",
+        "name": "OLA script",
+        "statusUpdateComment": ""
+      },
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "nodeType": {
+          "type": "string"
+        },
+        "sourceType": {
+          "type": "string"
+        },
+        "sourceId": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "protocol": {
+          "type": "string"
+        },
+        "simpleExp": {
+          "type": "string"
+        },
+        "complexExp": {
+          "type": "string"
+        },
+        "script": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "topicOrVersionChosenOrUri": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "createdOn": {
+          "type": "string"
+        },
+        "modifiedOn": {
+          "type": "string"
+        },
+        "modifiedBy": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "statusUpdateComment": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "nodeType",
+        "sourceType",
+        "sourceId",
+        "type",
+        "protocol",
+        "simpleExp",
+        "complexExp",
+        "script",
+        "status",
+        "topicOrVersionChosenOrUri",
+        "createdBy",
+        "createdOn",
+        "modifiedOn",
+        "modifiedBy",
+        "name",
+        "statusUpdateComment"
+      ]
+    },
+    "uniqueCheckRequest": {
+      "title": "uniqueCheckRequest",
+      "example": {
+        "type": "templateName",
+        "values": {
+          "name": "temp2"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "values": {
+          "$ref": "#/definitions/Values"
+        }
+      },
+      "required": [
+        "type",
+        "values"
+      ]
+    },
+    "Values": {
+      "title": "Values",
+      "example": {
+        "name": "temp2"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "uniqueValuesCheckRequest": {
+      "title": "uniqueValuesCheckRequest",
+      "example": {
+        "type": "uniqueIdValue",
+        "values": {
+          "sourceId": "SG_2",
+          "uniqueIdValue": "10001",
+          "uniqueKey": "device_id"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "values": {
+          "$ref": "#/definitions/Values1"
+        }
+      },
+      "required": [
+        "type",
+        "values"
+      ]
+    },
+    "Values1": {
+      "title": "Values1",
+      "example": {
+        "sourceId": "SG_2",
+        "uniqueIdValue": "10001",
+        "uniqueKey": "device_id"
+      },
+      "type": "object",
+      "properties": {
+        "sourceId": {
+          "type": "string"
+        },
+        "uniqueIdValue": {
+          "type": "string"
+        },
+        "uniqueKey": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "sourceId",
+        "uniqueIdValue",
+        "uniqueKey"
+      ]
+    },
+    "getFilteredRulesRequest": {
+      "title": "getFilteredRulesRequest",
+      "example": {
+        "sourceId": "SG_1",
+        "status": "Approved",
+        "topicOrUri": "/data/1",
+        "templateBased": true
+      },
+      "type": "object",
+      "properties": {
+        "sourceId": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "topicOrUri": {
+          "type": "string"
+        },
+        "templateBased": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "sourceId",
+        "status",
+        "topicOrUri",
+        "templateBased"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Template",
+      "description": "Contains commune template related API's"
+    },
+    {
+      "name": "Source",
+      "description": "Contains commune Source related API's"
+    },
+    {
+      "name": "Source Mapping",
+      "description": "Contains commune Source Mapping related API's"
+    },
+    {
+      "name": "Rule",
+      "description": "Contains rtbuilder rule related API's"
+    },
+    {
+      "name": "Common - Right Panel",
+      "description": "Contains iotglue common Right Panel API's"
+    },
+    {
+      "name": "Common",
+      "description": "Contains iotglue common API's"
+    }
+  ]
+}
